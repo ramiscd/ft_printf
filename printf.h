@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_char.c                                    :+:      :+:    :+:   */
+/*   printf.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/26 20:51:30 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/28 19:55:17 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/08/28 19:20:12 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/08/28 20:23:52 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#ifndef PRINTF_H
+#define PRINTF_H
 
-void	ft_print_char(char c)
-{
-	write(1, &c, 1);
-}
+# include <stdlib.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <unistd.h>
+
+void	ft_print_char(char c);
+void	ft_print_ptr(void *ptr);
+int		ft_printf(const char* format_string, ...);
+void	ft_print_string(const char *c);
+
+# endif

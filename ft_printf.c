@@ -6,16 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 22:13:30 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/27 21:53:38 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/28 20:24:05 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-void	ft_print_string(const char *c);
-void	ft_print_char(char c);
-void	ft_print_ptr(char *ptr);
+#include "printf.h"
 
 int	ft_printf(const char* format_string, ...)
 {
@@ -43,7 +38,7 @@ int	ft_printf(const char* format_string, ...)
 			}
 			else if (format_string[j] == 'p')
 			{
-				char *ptr = va_arg(args, char *);
+				char *ptr = va_arg(args, void *);
 				ft_print_ptr(ptr);
 			}
 			else if (format_string[j] == 'd')
@@ -76,7 +71,7 @@ int	ft_printf(const char* format_string, ...)
 	return (0);
 }
 
-int main(void)
+/* int main(void)
 {
 	const char* format_string = "primerira letra: %c, segunda letra %c, primeira palavra %s, ponteiro: %p";
 	char str[] = "palavra";
@@ -85,4 +80,4 @@ int main(void)
 	char *ptr;
 	ft_printf(format_string, a, b, str, ptr);
 	return (0);
-}
+} */

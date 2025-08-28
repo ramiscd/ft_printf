@@ -6,13 +6,13 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:39:02 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/27 21:31:27 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/28 20:01:13 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "printf.h"
 
-void ft_print_string(const char *c)
+void	ft_print_string(const char *c)
 {
 	int i;
 
