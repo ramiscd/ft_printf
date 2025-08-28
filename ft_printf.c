@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 22:13:30 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/26 20:55:35 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/27 21:53:38 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	ft_print_string(const char *c);
 void	ft_print_char(char c);
+void	ft_print_ptr(char *ptr);
 
 int	ft_printf(const char* format_string, ...)
 {
@@ -37,10 +38,33 @@ int	ft_printf(const char* format_string, ...)
 			}
 			else if (format_string[j] == 's')
 			{
-				c = va_arg(args, int);
-				ft_print_string(c);
+				char *str = va_arg(args, char *);
+				ft_print_string(str);
 			}
-			// else if para diferentes formatos
+			else if (format_string[j] == 'p')
+			{
+				char *ptr = va_arg(args, char *);
+				ft_print_ptr(ptr);
+			}
+			else if (format_string[j] == 'd')
+			{
+			}
+			else if (format_string[j] == 'i')
+			{
+			}
+			else if (format_string[j] == 'u')
+			{
+			}
+			else if (format_string[j] == 'x')
+			{
+			}
+			else if (format_string[j] == 'X')
+			{
+			}
+			else
+			{
+				ft_print_char('%');
+			}
 		}
 		else
 		{
@@ -54,10 +78,11 @@ int	ft_printf(const char* format_string, ...)
 
 int main(void)
 {
-	const char* format_string = "primerira letra: %c, segunda letra %c, primeira palavra %s";
+	const char* format_string = "primerira letra: %c, segunda letra %c, primeira palavra %s, ponteiro: %p";
 	char str[] = "palavra";
 	char a = 'a';
 	int b = 'b';
-	ft_printf(format_string, a, b, str);
+	char *ptr;
+	ft_printf(format_string, a, b, str, ptr);
 	return (0);
 }

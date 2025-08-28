@@ -6,11 +6,11 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/19 19:48:18 by youvisa           #+#    #+#             */
-/*   Updated: 2025/08/20 21:47:28 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/27 21:15:12 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/* #include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 
@@ -38,4 +38,4 @@ int main()
 {
   printf("%d\n", soma(3, 1, 2, 3));
   return (0);
-}
+} */
