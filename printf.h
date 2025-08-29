@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/28 19:20:12 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/28 20:23:52 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/08/28 21:25:18 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <unistd.h>
+ #include <stdint.h>
 
 void	ft_print_char(char c);
 void	ft_print_ptr(void *ptr);
