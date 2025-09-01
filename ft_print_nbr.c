@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_print_nbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/28 19:20:12 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/09/01 20:08:19 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/09/01 19:33:38 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/09/01 20:13:25 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-#define PRINTF_H
+#include "printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <unistd.h>
-#include <stdint.h>
+void	ft_print_nbr(int n)
+{
+	long	nb;
 
-void	ft_print_char(char c);
-void	ft_print_ptr(void *ptr);
-int		ft_printf(const char* format_string, ...);
-void	ft_print_string(const char *c);
-void	ft_print_dec(int c);
-void	ft_print_nbr(int n);
+	nb = n;
+	if (nb < 0)
+	{
+		ft_print_char('-');
+		nb = -nb;
+	}
+	if (nb >= 0 && nb <= 9)
+		ft_print_char(nb + '0');
+	else
+	{
+		ft_print_nbr(nb / 10);
+		ft_print_char((nb % 10) + '0');
+	}
+}
 
-# endif
+int	main(void)
+{
+	ft_print_nbr(123);
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/20 22:13:30 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/28 20:24:05 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/09/01 19:30:53 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,13 @@ int	ft_printf(const char* format_string, ...)
 			}
 			else if (format_string[j] == 'd')
 			{
+				char c2 = va_arg(args, int);
+				ft_print_dec(c2);
 			}
 			else if (format_string[j] == 'i')
 			{
+				int num = va_arg(args, int);
+				ft_print_num(num);
 			}
 			else if (format_string[j] == 'u')
 			{
