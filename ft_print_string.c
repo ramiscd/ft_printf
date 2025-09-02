@@ -6,20 +6,23 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 19:39:02 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/28 20:01:13 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/09/02 19:47:30 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_print_string(const char *c)
+int	ft_print_string(char *c)
 {
-	int i;
+	int	i;
 
 	i = 0;
+	if (!c)
+		return (ft_print_string("(null)"));
 	while (c[i] != '\0')
 	{
 		write(1, &c[i], 1);
 		i++;
 	}
+	return (i);
 }

@@ -6,13 +6,14 @@
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/26 20:51:30 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/08/28 19:55:17 by rdamasce         ###   ########.fr       */
+/*   Updated: 2025/09/02 19:36:27 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_print_char(char c)
+int	ft_print_char(int c)
 {
 	write(1, &c, 1);
+	return (1);
 }

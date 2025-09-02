@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   printf.h                                           :+:      :+:    :+:   */
+/*   ft_print_uns.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/28 19:20:12 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/09/01 20:08:19 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/09/02 19:22:12 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/09/02 19:36:09 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRINTF_H
-#define PRINTF_H
+#include "ft_printf.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <unistd.h>
-#include <stdint.h>
+int	ft_print_uns(unsigned int n)
+{
+	int	count;
 
-void	ft_print_char(char c);
-void	ft_print_ptr(void *ptr);
-int		ft_printf(const char* format_string, ...);
-void	ft_print_string(const char *c);
-void	ft_print_dec(int c);
-void	ft_print_nbr(int n);
-
-# endif
+	count = 0;
+	if (n >= 10)
+		count += ft_print_uns(n / 10);
+	count += ft_print_char((n % 10) + '0');
+	return (count);
+}

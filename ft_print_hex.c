@@ -1,21 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_dec.c                                     :+:      :+:    :+:   */
+/*   ft_print_hex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rdamasce <rdamasce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/01 19:25:02 by rdamasce          #+#    #+#             */
-/*   Updated: 2025/09/01 19:29:37 by rdamasce         ###   ########.fr       */
+/*   Created: 2025/09/01 20:45:10 by rdamasce          #+#    #+#             */
+/*   Updated: 2025/09/02 19:36:30 by rdamasce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
-void	ft_print_dec(int c)
+int	ft_print_hex(unsigned long n, char format)
 {
-	int num;
+	char	*base;
+	int		count;
 
-	num = c + '0';
-	write(1,&num, 1);
+	count = 0;
+	if (format == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	if (n >= 16)
+		count += ft_print_hex(n / 16, format);
+	count += ft_print_char(base[n % 16]);
+	return (count);
 }
